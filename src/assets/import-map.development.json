@@ -1,0 +1,5 @@
+{
+  "imports": {
+    "test": "http://localhost:4201/main.js"
+  }
+}

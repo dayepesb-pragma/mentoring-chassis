@@ -1,3 +1,4 @@
+import { APP_BASE_HREF } from '@angular/common';
 import { Component } from '@angular/core';
 import { Title } from '@angular/platform-browser';
 import { RouterOutlet } from '@angular/router';
@@ -6,6 +7,7 @@ import { RouterOutlet } from '@angular/router';
   selector: 'app-root',
   standalone: true,
   imports: [RouterOutlet],
+  providers: [{ provide: APP_BASE_HREF, useValue: '/' }],
   templateUrl: './app.component.html',
   styleUrl: './app.component.scss'
 })

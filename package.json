@@ -3,8 +3,9 @@
   "version": "0.0.0",
   "scripts": {
     "ng": "ng",
-    "start": "ng serve",
-    "build": "ng build",
+    "start": "cp src/assets/import-map.development.json src/assets/import-map.json && ng serve",
+    "build:prod": "cp src/assets/import.production.json src/assets/import-map.json && ng build --prod",
+    "build:dev": "cp src/assets/import-map.development.json src/assets/import-map.json && ng build",
     "watch": "ng build --watch --configuration development",
     "test": "ng test"
   },
@@ -38,6 +39,7 @@
     "@angular/localize": "^17.3.9",
     "@types/jasmine": "~5.1.0",
     "@types/systemjs": "^6.13.5",
+    "dotenv-webpack": "^8.1.0",
     "jasmine-core": "~5.1.0",
     "karma": "~6.4.0",
     "karma-chrome-launcher": "~3.2.0",

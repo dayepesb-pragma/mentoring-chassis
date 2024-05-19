@@ -2,10 +2,12 @@
 {
   "extends": "./tsconfig.json",
   "compilerOptions": {
+    "strictPropertyInitialization": false,
     "outDir": "./out-tsc/app",
     "types": [
       "@angular/localize",
-      "zone.js"
+      "zone.js",
+      "systemjs"
     ]
   },
   "files": [
