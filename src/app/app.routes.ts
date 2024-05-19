@@ -26,6 +26,6 @@ export const routes: Routes = [
         component: ResumeComponent,
       }
       // más rutas aquí
-    ],
-  },
+    ]
+  }
 ];
