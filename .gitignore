@@ -47,5 +47,5 @@ Thumbs.db
 *-debug.log
 .runtimeconfig.json
 
-src/assets/import-map.json
+/src/assets/import-map.json
 src/assets/import-map.json
