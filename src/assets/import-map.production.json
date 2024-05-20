@@ -1,5 +1,5 @@
 {
   "imports": {
-    "test": "http://localhost:4201/main.js"
+    "mentoring": "http://localhost:4201/main.js"
   }
 }

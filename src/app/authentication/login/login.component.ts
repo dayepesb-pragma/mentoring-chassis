@@ -1,5 +1,4 @@
 import { Component, inject } from '@angular/core';
-import { registerApplication, start } from 'single-spa';
 import { AuthService } from '../../service/auth.service';
 
 @Component({
@@ -14,15 +13,18 @@ export class LoginComponent {
   private _service = inject(AuthService);
 
   constructor() {
+    process.env
+    /*
     registerApplication(
-      'test-app',
-      () => System.import('test').then((module) => module.default),
+      'mentoring-app',
+      () => System.import('mentoring').then((module) => module.default),
       location => location.pathname.startsWith('/')
     );
 
     start({
       urlRerouteOnly: true,
     });
+    */
   }
 
   byGoogle(): void {

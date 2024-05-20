@@ -2,13 +2,10 @@ const singleSpaAngularWebpack = require('single-spa-angular/lib/webpack').defaul
 const Dotenv = require('dotenv-webpack');
 
 module.exports = (config, options) => {
-  console.log('options ____________________________________________', options);
   const singleSpaWebpackConfig = singleSpaAngularWebpack(config, options);
 
   singleSpaWebpackConfig.plugins.push(
-    new Dotenv({
-      path: `./.env.${options.mode}`,
-    })
+    new Dotenv()
   );
   singleSpaWebpackConfig.output = {
     ...singleSpaWebpackConfig.output,
