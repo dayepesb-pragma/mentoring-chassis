@@ -49,3 +49,7 @@ Thumbs.db
 
 /src/assets/import-map.json
 src/assets/import-map.json
+enviroment.ts
+src/environments/environment.ts
+src/environments/environment.prod.ts
+src/environments/environment.development.ts
