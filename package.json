@@ -4,7 +4,7 @@
   "scripts": {
     "ng": "ng",
     "start": "cp src/assets/import-map.development.json src/assets/import-map.json && ng serve",
-    "build:prod": "cp src/assets/import.production.json src/assets/import-map.json && ng build --prod",
+    "build:prod": "cp src/assets/import-map.production.json src/assets/import-map.json && ng build",
     "build:dev": "cp src/assets/import-map.development.json src/assets/import-map.json && ng build",
     "watch": "ng build --watch --configuration development",
     "test": "ng test"
@@ -21,6 +21,9 @@
     "@angular/platform-browser": "^17.3.0",
     "@angular/platform-browser-dynamic": "^17.3.0",
     "@angular/router": "^17.3.0",
+    "@fortawesome/angular-fontawesome": "^0.14.1",
+    "@fortawesome/fontawesome-svg-core": "^6.5.2",
+    "@fortawesome/free-solid-svg-icons": "^6.5.2",
     "firebase": "^10.12.0",
     "import-map-overrides": "^3.1.1",
     "rxjs": "~7.8.0",

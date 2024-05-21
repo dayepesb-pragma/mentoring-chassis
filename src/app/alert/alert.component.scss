@@ -1,0 +1,88 @@
+.alert-container {
+  position: relative;
+  left: 50%;
+  transform: translateX(-50%);
+  max-width: 50%;
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+  margin-bottom: 10px;
+  z-index: 9999;
+}
+
+.alert {
+  padding: 10px;
+  border-radius: 10px;
+  border-width: 2px;
+  border-style: solid;
+  color: white;
+  font-size: 0.8rem;
+  font-family: "Poppins", sans-serif;
+  font-weight: 400;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.alert-icon, .alert-message, .close-button {
+  //flex: 1;
+  text-align: center;
+}
+
+.alert-message, .close-button {
+  //flex: 1;
+  text-align: center;
+}
+
+.alert-icon {
+  text-align: left;
+  display: inline-flex;
+  margin-right: 1rem;
+}
+
+.close-button {
+  text-align: right;
+  
+  margin-left: 1rem;
+}
+
+.icon-success, .icon-warning, .icon-error {
+  font-size: 1.5em;
+  margin-right: 15px;
+}
+
+.alert i, .alert img {
+  margin-right: 10px;
+}
+
+.alert button {
+  float: right;
+}
+
+.close-button {
+  background: none;
+  border: none;
+  color: white;
+  cursor: pointer;
+}
+
+
+/* Para pantallas de iPad y móviles */
+@media (max-width: 768px) {
+  .alert-container {
+    max-width: 90%;
+  }
+}
+
+.alert {
+  animation-fill-mode: forwards;
+}
+
+@keyframes slideIn {
+  0% { top: -100px; opacity: 0; }
+  100% { top: 0; opacity: 1; }
+}
+
+@keyframes slideOut {
+  0% { top: 0; opacity: 1; }
+  100% { top: -100px; opacity: 0; }
+}

@@ -14,6 +14,6 @@ export class MainLayoutComponent {
   private _authService: any = inject(AuthService);
 
   logout(): void {
-    this._authService.logout();
+    this._authService.signOut();
   }
 }

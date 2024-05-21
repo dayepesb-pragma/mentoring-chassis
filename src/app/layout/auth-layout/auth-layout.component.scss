@@ -1,0 +1,22 @@
+
+#stars-container {
+  margin: 0;
+  height: 100vh;
+  background: #000;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #fff;
+  font-size: 24px;
+  background:    radial-gradient(4px 4px at 20% 30%, #535355, rgba(255,255,255,0)),    radial-gradient(4px 4px at 40% 70%, #535355, rgba(255,255,255,0)),    radial-gradient(4px 4px at 50% 12%, #535355, rgba(255,255,255,0)),        radial-gradient(4px 4px at 60% 80%, #535355, rgba(255,255,255,0)),        radial-gradient(4px 4px at 80% 40%, #535355, rgba(255,255,255,0)),        radial-gradient(4px 4px at 100% 50%, #535355, rgba(255,255,255,0)),    radial-gradient(4px 4px at 40% 88%, #535355, rgba(255,255,255,0)),    radial-gradient(4px 4px at 80% 20%, #535355, rgba(255,255,255,0)),    radial-gradient(4px 4px at 30% 2%, #535355, rgba(255,255,255,0)),    radial-gradient(4px 4px at 5% 8%, #535355, rgba(255,255,255,0)),    radial-gradient(4px 4px at 30% 10%, #535355, rgba(255,255,255,0)),    radial-gradient(4px 4px at 50% 9%, #535355, rgba(255,255,255,0)),    radial-gradient(4px 4px at 30% 56%, #535355, rgba(255,255,255,0)),    radial-gradient(4px 4px at 95% 95%, #535355, rgba(255,255,255,0)),    radial-gradient(4px 4px at 17% 43%, #535355, rgba(255,255,255,0)),    radial-gradient(4px 4px at 76% 75%, #535355, rgba(255,255,255,0)),    radial-gradient(4px 4px at 81% 67%, #535355, rgba(255,255,255,0)),    #000;
+  animation: stars 60s infinite linear;
+  -webkit-animation: stars 60s infinite linear;
+}
+
+@keyframes stars {
+  from { background-position: 0 0; }
+  to { background-position: 10000px 5000px; }
+}
+
+

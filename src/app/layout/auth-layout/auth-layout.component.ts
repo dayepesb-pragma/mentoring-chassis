@@ -12,8 +12,4 @@ import { RouterOutlet } from '@angular/router';
 
 })
 export class AuthLayoutComponent {
-  constructor() {
-    console.log('AuthLayoutComponent');
-  }
-
 }
