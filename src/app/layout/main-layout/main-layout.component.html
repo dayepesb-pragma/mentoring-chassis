@@ -1,12 +1,45 @@
 <header>
-  <!-- Aquí puedes poner tu código para el header -->
+  <div class="hamburger" (click)="toggleMobileMenu()" *ngIf="isScreenSmall">
+    <div></div>
+    <div></div>
+    <div></div>
+  </div>
+  <div class="nav-links" [class.hide]="isScreenSmall">
+    <div class="nav-helper-left">
+      <div class="line line-left"></div>
+    </div>
+    <div class="nav-links-menu">
+      <div routerLink="/dashboard/admin">
+        <span>Administración</span>
+        <div routerLinkActive="current-route"></div>
+      </div>
+      <div routerLink="/dashboard/mentor">
+        <span>Mentor</span>
+        <div routerLinkActive="current-route"></div>
+      </div>
+      <div routerLink="/dashboard/mentee">
+        <span>Mentee</span>
+        <div routerLinkActive="current-route"></div>
+      </div>
+    </div>
+    <div class="nav-helper-right">
+      <div _ngcontent-apl-c18="" class="line line-right"></div>
+      <app-dropdown-menu [photo]="userPhoto" (logout)="logout()"></app-dropdown-menu>
+    </div>
+  </div>
 </header>
-
-<main>
+<div class="mobile-menu" [class.show]="isMobileMenuOpen">
+  <div class="profile-picture">
+    <img src="path_to_your_profile_picture" alt="Profile Picture">
+  </div>
+  <a href="#">Opción A</a>
+  <a href="#">Opción B</a>
+  <a href="#">Opción C</a>
   <button (click)="logout()">Logout</button>
+</div>
+<main [class.darken]="isMobileMenuOpen">
   <router-outlet></router-outlet>
 </main>
-
 <footer>
   <!-- Aquí puedes poner tu código para el footer -->
 </footer>

@@ -25,9 +25,7 @@ export class AuthService {
   }
 
   byGoogle(): Promise<UserCredential> {
-    return signInWithPopup(this._auth, new GoogleAuthProvider()).then(async result => {
-      return result;
-    });
+    return signInWithPopup(this._auth, new GoogleAuthProvider());
   }
 
   async refreshSession() {
@@ -51,5 +49,9 @@ export class AuthService {
 
   isLogged(): boolean {
     return !!this._auth.currentUser;
+  }
+
+  get currentUser(): any {
+    return this._auth.currentUser;
   }
 }

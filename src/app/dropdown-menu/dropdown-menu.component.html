@@ -1,0 +1,8 @@
+<div class="dropdown-menu">
+  <div class="container-photo">
+    <img [src]="photo" alt="User photo" class="user-photo" (click)="toggleDropdown()" />
+  </div>
+  <div class="dropdown-options" *ngIf="showDropdown" (click)="onLogout()" >
+    <p><fa-icon [icon]="faSignOutAlt"></fa-icon> Salir</p>
+  </div>
+</div>

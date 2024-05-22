@@ -2,4 +2,248 @@ main {
   background-color: #1a0938;
   min-height: 100vh; /* Esto asegura que el fondo cubra toda la altura de la pantalla */
   color: #fff;
+  transition: background-color 0.3s ease-in-out;
+}
+
+main.darken {
+  background-color: rgba(26, 9, 56, 0.7);
+}
+
+header {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #1a0938;
+  color: #fff;
+  z-index: 1000;
+}
+
+.nav-links {
+  display: flex;
+    justify-content: center;
+    width: 100%;
+    max-width: 1370px;
+    margin: 0 auto;
+    padding: 0 100px;
+    flex-direction: row;
+}
+
+.nav-links-menu {
+  background-color: #1a0938;
+  box-shadow: 0 0 80px #6429cd inset;
+  border-bottom: 1px solid #6429cd;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 20px;
+  padding: 10px 10px 0 30px;
+  border-radius: 0 0 20px 20px;
+  position: relative;
+
+  span {
+    font-size: 1rem;
+    font-weight: 500;
+    font-family: "Poppins", sans-serif;
+    color: #fff;
+    text-decoration: none;
+    cursor: pointer;
+    margin: 1rem;
+  }
+
+  &:before {
+    content: "";
+    height: 40px;
+    width: 40px;
+    background: #1a0938;
+    position: absolute;
+    top: 15px;
+    right: -40px;
+    border-radius: 50%;
+    z-index: 10;
+  }
+
+  &:after {
+    content: "";
+    height: 40px;
+    width: 40px;
+    background: #1a0938;
+    position: absolute;
+    top: 15px;
+    left: -40px;
+    border-radius: 50%;
+    z-index: 10;
+  }
+
+  div span {
+    transition: color 0.3s ease;
+    -webkit-transition: color 0.3s ease;
+    -moz-transition: color 0.3s ease;
+    -ms-transition: color 0.3s ease;
+    -o-transition: color 0.3s ease;
+}
+  
+  div span:hover {
+    color: #6429cd;
+  }
+
+  div span {
+    transition: opacity 0.3s ease;
+    -webkit-transition: opacity 0.3s ease;
+    -moz-transition: opacity 0.3s ease;
+    -ms-transition: opacity 0.3s ease;
+    -o-transition: opacity 0.3s ease;
+  }
+
+  div {
+    margin-top: 1rem;
+  }
+  div.current-route {
+    opacity: 1;
+  }
+}
+
+.current-route {
+  content: "";
+  width: 100%;
+  height: 5px;
+  margin-top: 0.5rem;
+  background: #ffffff;
+  box-shadow: 0 -4px 20px #bdbdff;
+  border-radius: 5px;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  -ms-border-radius: 5px;
+  -o-border-radius: 5px;
+}
+
+.nav-helper-left {
+  display: flex;
+  flex-direction: column;
+  flex-grow: 2;
+  width: 15%;
+}
+
+.nav-helper-right {
+  display: flex;
+    flex-direction: column;
+    flex-grow: 2;
+    width: 15%;
+}
+
+.line {
+  width: 100%;
+  height: 15px;
+  position: relative;
+  background: #6429cd;
+  background: linear-gradient(180deg, rgb(80, 32, 166) 0%, rgb(79, 32, 162) 100%);
+}
+
+.line-left {
+  background: linear-gradient(90deg, #6429cd 0%, rgb(77, 31, 159) 100%);
+
+  &::before {
+    content: "";
+    position: absolute;
+    width: 100%;
+    top: 0;
+    left: -99%;
+    background: linear-gradient(90deg, rgb(77, 31, 159) 0%, rgb(100, 41, 205) 100%);
+    height: 15px;
+  }
+
+  &::after {
+    content: "";
+    height: 20px;
+    width: 20px;
+    background: #6429cd;
+    background: linear-gradient(180deg, rgb(79, 32, 162) 0%, rgb(77, 31, 159) 100%);
+    position: absolute;
+    top: 15px;
+    right: 0;
+  }
+}
+.line-right {
+  background: linear-gradient(270deg, #6429cd 0%, rgb(77, 31, 159) 100%);
+
+  &::before {
+    content: "";
+    height: 20px;
+    width: 20px;
+    background: #6429cd;
+    background: linear-gradient(180deg, rgb(79, 32, 162) 0%, rgb(77, 31, 159) 100%);
+    position: absolute;
+    top: 15px;
+    left: 0;
+  }
+
+  &::after {
+    content: "";
+    position: absolute;
+    width: 100%;
+    top: 0;
+    right: -99%;
+    background: linear-gradient(90deg, rgb(100, 41, 205) 0%, rgb(77, 31, 159) 100%);
+    height: 15px;
+  }
+}
+
+.hamburger {
+  position: absolute; /* Añade esta línea para posicionar el icono de menú hamburguesa de forma absoluta */
+  left: 10px; /* Añade esta línea para mover el icono de menú hamburguesa a la izquierda */
+  display: none;
+  flex-direction: column;
+  justify-content: space-around;
+  width: 2rem;
+  height: 2rem;
+  cursor: pointer;
+}
+
+.hamburger div {
+  width: 2rem;
+  height: 0.25rem;
+  background-color: #fff;
+}
+
+.mobile-menu {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 80%;
+  height: 100vh;
+  background-color: #1a0938;
+  color: #fff;
+  z-index: 999;
+  padding: 50px;
+  box-sizing: border-box;
+  transition: transform 0.3s ease-in-out;
+}
+
+.mobile-menu.show {
+  display: block;
+  transform: translateX(0);
+}
+
+.hide {
+  display: none;
+}
+
+@media (min-width: 960px) {
+  header::before {
+    display: block;
+  }
+}
+
+@media (max-width: 960px) {
+  .nav-links {
+    display: none;
+  }
+
+  .hamburger {
+    display: flex;
+  }
 }

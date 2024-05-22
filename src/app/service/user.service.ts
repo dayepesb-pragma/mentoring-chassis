@@ -9,7 +9,7 @@ export class UserService {
 
   constructor(private _firestore: AngularFirestore) { }
 
-  getUserInfo(email: string): Promise<any> {
+  async getUserInfo(email: string): Promise<any> {
     return firstValueFrom(this._firestore
       .collection('users')
       .doc(email)
@@ -32,7 +32,14 @@ export class UserService {
       return this._firestore
         .collection('users')
         .doc(userInfo.email)
-        .set(userInfo);
+        .set({
+          ...userInfo,
+          permissions: {
+            admin: false,
+            editor: false,
+            viewer: true,
+          }
+        });
     }
     console.log('User exists');
     return Promise.resolve();
