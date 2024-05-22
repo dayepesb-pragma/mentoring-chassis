@@ -44,4 +44,10 @@ export class UserService {
     console.log('User exists');
     return Promise.resolve();
   }
+
+  isMentorAdmin(email: string): Promise<boolean> {
+    return this.getUserInfo(email).then((userInfo) => {
+      return userInfo.permissions.admin;
+    });
+  }
 }

@@ -30,6 +30,7 @@ export class MainLayoutComponent implements AfterViewInit {
     permissions: [],
     picture: ''
   };
+  isAdmin: boolean = false;
 
   constructor(private _authService: AuthService, private _userService: UserService, private _loaderService: LoadingService) {
   }
@@ -45,6 +46,7 @@ export class MainLayoutComponent implements AfterViewInit {
           permissions: Object.keys(userInfo.permissions).filter((key) => userInfo.permissions[key]),
           picture: userInfo.picture
         };
+        this.isAdmin = this.infoProfile.permissions.includes('admin');
       }).catch(() => {
         console.error('Error al obtener la información del usuario');
       })
