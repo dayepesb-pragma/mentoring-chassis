@@ -1,0 +1,29 @@
+$color-primary: #6429cd;
+
+button {
+  background-color: #6429cd33;
+  color: #fff;
+  border: 1px solid $color-primary;
+  display: flex;
+  align-items: center;
+  min-height: 36px;
+  min-width: -moz-fit-content;
+  min-width: fit-content;
+  padding: 0 24px;
+  border-radius: 50px;
+  box-sizing: border-box;
+  outline: none;
+  cursor: pointer;
+  font-size: 14px;
+  font-family: Poppins-SemiBold;
+  transition: background-color .2s, box-shadow .2s;
+
+  &:hover {
+    box-shadow: 0 0 15px $color-primary, inset 0 0 20px #6429cdcc;
+  }
+
+  &:active {
+    background-color: $color-primary;
+    box-shadow: 0 0 15px $color-primary, inset 0 0 10px #bdbdff80;
+  }
+}

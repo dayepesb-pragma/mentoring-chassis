@@ -1,6 +1,10 @@
 import { CommonModule } from '@angular/common';
-import { AfterViewInit, Component, HostListener, OnInit } from '@angular/core';
+import { AfterViewInit, Component, HostListener } from '@angular/core';
 import { RouterModule, RouterOutlet } from '@angular/router';
+import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
+import { faBars, faSignOutAlt } from '@fortawesome/free-solid-svg-icons';
+import { ButtonComponent } from '../../common/button/button.component';
+import { ClickOutsideDirective } from '../../directive/click-outside-directive.directive';
 import { DropdownMenuComponent } from '../../dropdown-menu/dropdown-menu.component';
 import { UserInfo } from '../../models/UserInfo';
 import { AuthService } from '../../service/auth.service';
@@ -10,14 +14,16 @@ import { UserService } from '../../service/user.service';
 @Component({
   selector: 'app-main-layout',
   standalone: true,
-  imports: [RouterOutlet, CommonModule, RouterModule, DropdownMenuComponent],
+  imports: [RouterOutlet, CommonModule, RouterModule, DropdownMenuComponent, ClickOutsideDirective, FontAwesomeModule, ButtonComponent],
   templateUrl: './main-layout.component.html',
   styleUrl: './main-layout.component.scss'
 })
-export class MainLayoutComponent implements OnInit, AfterViewInit {
+export class MainLayoutComponent implements AfterViewInit {
 
+  faBars = faBars;
+  faSignOutAlt = faSignOutAlt;
   isScreenSmall: boolean = false;
-  isMobileMenuOpen: boolean = false;
+  isMobileMenuOpen: boolean = true;
   infoProfile: UserInfo = {
     name: '',
     email: '',
@@ -26,9 +32,6 @@ export class MainLayoutComponent implements OnInit, AfterViewInit {
   };
 
   constructor(private _authService: AuthService, private _userService: UserService, private _loaderService: LoadingService) {
-  }
-  ngOnInit(): void {
-    throw new Error('Method not implemented.');
   }
 
   ngAfterViewInit() {
@@ -57,6 +60,10 @@ export class MainLayoutComponent implements OnInit, AfterViewInit {
   logout(): void {
     console.log('dsadasdsa', this._authService);
     this._authService.signOut();
+  }
+
+  onOutsideMenu(): void {
+
   }
 
   @HostListener('window:resize', ['$event'])

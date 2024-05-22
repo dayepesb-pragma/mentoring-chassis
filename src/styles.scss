@@ -2,6 +2,10 @@ body{
   overflow-x: hidden;
 }
 
+body::-webkit-scrollbar{
+  width:8px;margin-right:5px;background-color:#3b355b}body::-webkit-scrollbar-thumb{background-color:#bdbdff;border-radius:5px;height:140.49px}*{font-family:Poppins-Regular;box-sizing:border-box}*::-webkit-scrollbar{width:4px;height:4px}*::-webkit-scrollbar-thumb{background:#bdbdff;border-radius:5px}*::-webkit-scrollbar-track{background-color:transparent;margin-block:.5rem}body{overflow-x:hidden}body{background:#d3d8ed;background-color:#d3d8ed;opacity:1;background-image:radial-gradient(#cbccea 2px,#d3d8ed 2px);background-size:40px 40px}html,body{height:100%}body{margin:0;font-family:Roboto,Helvetica Neue,sans-serif
+}
+
 .poppins-thin {
   font-family: "Poppins", sans-serif;
   font-weight: 100;
