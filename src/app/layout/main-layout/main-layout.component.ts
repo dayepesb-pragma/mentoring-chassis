@@ -23,7 +23,7 @@ export class MainLayoutComponent implements AfterViewInit {
   faBars = faBars;
   faSignOutAlt = faSignOutAlt;
   isScreenSmall: boolean = false;
-  isMobileMenuOpen: boolean = true;
+  isMobileMenuOpen: boolean = false;
   infoProfile: UserInfo = {
     name: '',
     email: '',

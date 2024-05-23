@@ -7,7 +7,7 @@
     >
       <div class="alert-icon">
         <fa-icon *ngIf="alert.type === 'success'" [icon]="faCheck" class="icon-success"></fa-icon>
-        <fa-icon *ngIf="alert.type === 'alert'" [icon]="faExclamationTriangle" class="icon-warning"></fa-icon>
+        <fa-icon *ngIf="alert.type === 'warning'" [icon]="faExclamationTriangle" class="icon-warning"></fa-icon>
         <fa-icon *ngIf="alert.type === 'error'" [icon]="faTimesCircle" class="icon-error"></fa-icon>
       </div>
       <div class="alert-message">

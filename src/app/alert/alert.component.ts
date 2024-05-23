@@ -21,7 +21,7 @@ import { AlertService } from '../service/alert.service';
   ]
 })
 export class AlertComponent implements OnInit {
-  alerts: { type: 'error' | 'alert' | 'success', message: string, isVisible: boolean }[] = [];
+  alerts: { type: 'error' | 'warning' | 'success', message: string, isVisible: boolean }[] = [];
   faTimes = faTimes;
   faCheck = faCheck;
   faExclamationTriangle = faExclamationTriangle;
@@ -48,18 +48,18 @@ export class AlertComponent implements OnInit {
     this.hideAlert(alert);
   }
 
-  alertBackgroundColor(type: 'error' | 'alert' | 'success'): string {
+  alertBackgroundColor(type: 'error' | 'warning' | 'success'): string {
     switch (type) {
       case 'error': return 'rgba(255, 0, 0, 0.7)'; // Rojo semi-transparente
-      case 'alert': return 'rgba(255, 255, 0, 0.7)'; // Amarillo semi-transparente
+      case 'warning': return 'rgba(255, 255, 0, 0.7)'; // Amarillo semi-transparente
       case 'success': return 'rgba(0, 128, 0, 0.7)'; // Verde semi-transparente
     }
   }
 
-  alertBorderColor(type: 'error' | 'alert' | 'success'): string {
+  alertBorderColor(type: 'error' | 'warning' | 'success'): string {
     switch (type) {
       case 'error': return 'rgb(255, 0, 0)'; // Rojo
-      case 'alert': return 'rgb(255, 255, 0)'; // Amarillo
+      case 'warning': return 'rgb(255, 255, 0)'; // Amarillo
       case 'success': return 'rgb(0, 128, 0)'; // Verde
     }
   }
