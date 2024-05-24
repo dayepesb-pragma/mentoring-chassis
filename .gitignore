@@ -55,3 +55,4 @@ src/environments/environment.prod.ts
 src/environments/environment.development.ts
 
 public/**
+package-lock.json
